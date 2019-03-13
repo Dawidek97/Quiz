@@ -2,10 +2,9 @@ package example.quiz.model;
 
 public class User {
 
-    private Integer numberOfPoints;
+    private Integer numberOfPoints = 0;
 
-    public User() {
-        numberOfPoints = 0;
+    public User(){
     }
 
     public void addPoint(){

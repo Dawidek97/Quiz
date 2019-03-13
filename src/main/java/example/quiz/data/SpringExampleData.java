@@ -22,6 +22,14 @@ public class SpringExampleData implements CommandLineRunner {
         test.addQuestion(new Question("Czy java ma klase Integer ?", false));
         test.addQuestion(new Question("Czy java ma destruktor ?", false));
 
+        Test test2 = new Test("Test jazdy na rowerze");
+        test2.addQuestion(new Question("czy rower ma pedały ?", true));
+        test2.addQuestion(new Question("czy rower ma silnik ?", false));
+        test2.addQuestion(new Question("czy w rorzewe jest łańcuch ?", true));
+        test2.addQuestion(new Question("czy w rowerze możemy jechać do tyłu?", true));
+        test2.addQuestion(new Question("czy w rowerem możemy latać ?", false));
+
         testRepository.save(test);
+        testRepository.save(test2);
     }
 }

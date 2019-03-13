@@ -19,15 +19,13 @@ public class TestController {
 
     @Autowired
     private TestRepository testRepository;
-
     private Integer currentQuestion;
 
     @GetMapping("/tests/{id}/play")
     public String play(@PathVariable Integer id, ModelMap modelMap) {
         Test test = testRepository.findById(id).get();
         modelMap.addAttribute("test", test);
-        modelMap.addAttribute("question",
-                test.getQuestionList().get(0));
+        modelMap.addAttribute("question", test.getQuestionList().get(0));
         currentQuestion = 0;
         user = new User();
         return "test";
@@ -35,9 +33,7 @@ public class TestController {
 
 
     @GetMapping("/tests/{id}/continue")
-    public String continueTest(
-            @RequestParam(required = false)
-                    boolean correct, @PathVariable Integer id, ModelMap modelMap) {
+    public String continueTest(@RequestParam(required = false) boolean correct, @PathVariable Integer id, ModelMap modelMap) {
         Test test = testRepository.findById(id).get();
         if ( test.getQuestionList().get(currentQuestion).isCorrect() == correct){
             user.addPoint();
