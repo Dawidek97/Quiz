@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+    <form>
+    <h1 th:text="${test.name}"></h1>
+    <h3 th:text="${question.content}"></h3>
+    <input type="radio" name="answer"> Tak <br>
+    <input type="radio" name="answer"> Nie <br>
+    <br> <input type="submit" name="value"> <br>
+    </form>
+</body>
+</html>
